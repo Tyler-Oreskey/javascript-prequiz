@@ -1,15 +1,27 @@
+body {
+    margin: 0;
+}
+
 h1 {
-    text-align: left;
+    display: inline-block;
+    padding: 0 20px 0 20px;
 }
 
 #stepNumber {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 15px;
+    display: inline-block;
     font-size: 24px;
     background-color: black;
     color: white;
+    padding: 0 20px 0 20px;
+}
+
+header {
+    display: flex;
+    background-color: #018ec5;
+}
+
+header div {
+    margin-left: auto;
 }
 
 .selected {
@@ -31,6 +43,7 @@ h1 {
 }
 
 table td {
+    cursor: pointer;
     width: 50px;
     height: 50px;
     text-align: center;
