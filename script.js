@@ -2,6 +2,9 @@ $(document).ready(function () {
     createTable(1, 10, "strip");
     createTable(20, 20, "main");
 
+    // defaults
+    $("#strip td:first").attr('class', 'selected');
+
     handleStripClickEvents();
     handleMainClickEvents();
 });
@@ -29,7 +32,7 @@ function createTable(rows, cols, id)  {
         const row = document.createElement("tr");
         for (let j = 0; j < cols; j++) {
             const cell = document.createElement("td");
-            const cellId = `cell-${i}-${j}`;
+            const cellId = `${i}-${j}`;
             cell.setAttribute("id", cellId);
             cell.textContent = cellId;
             row.appendChild(cell);

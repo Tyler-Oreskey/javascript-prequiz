@@ -24,13 +24,8 @@ header div {
     margin-left: auto;
 }
 
-.selected {
-    background-color: yellow;
-}
-
 #main {
     border: 1px solid lightgrey;
-    border-collapse: collapse;
 }
 
 #main td {
@@ -38,12 +33,18 @@ header div {
     background-color: white;
 }
 
-table {
-    border-collapse: collapse;
+.selected {
+    background-color: yellow;
+    border: 2px solid red !important;
 }
 
 #strip td {
-    border: 1px solid black;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 table td {
@@ -53,11 +54,8 @@ table td {
     text-align: center;
 }
 
-#strip td:first-child {
-    border: 3px solid red;
-}
-
 .table-container {
     display: flex;
     justify-content: center;
+    margin: 30px;
 }
