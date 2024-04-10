@@ -1,0 +1,41 @@
+h1 {
+    text-align: left;
+}
+
+#stepNumber {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    font-size: 24px;
+    background-color: black;
+    color: white;
+}
+
+.selected {
+    background-color: yellow;
+}
+
+#main {
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+}
+
+#main td {
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+#strip td {
+    border: 1px solid black;
+}
+
+table td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+#strip td:first-child {
+    border: 3px solid red;
+}
