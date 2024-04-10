@@ -38,6 +38,10 @@ header div {
     background-color: white;
 }
 
+table {
+    border-collapse: collapse;
+}
+
 #strip td {
     border: 1px solid black;
 }
@@ -51,4 +55,9 @@ table td {
 
 #strip td:first-child {
     border: 3px solid red;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
 }
