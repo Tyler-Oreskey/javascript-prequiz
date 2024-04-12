@@ -59,3 +59,14 @@ table td {
     justify-content: center;
     margin: 30px;
 }
+
+.black { background-color: black !important; }
+.red { background-color: red !important; }
+.blue { background-color: blue !important; }
+.yellow { background-color: yellow !important; }
+.green { background-color: green !important; }
+.purple { background-color: purple !important; }
+.orange { background-color: orange !important; }
+.cyan { background-color: cyan !important; }
+.magenta { background-color: magenta !important; }
+.gray { background-color: gray !important; }
