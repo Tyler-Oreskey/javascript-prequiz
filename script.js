@@ -18,12 +18,30 @@ $(document).ready(function () {
 
 function handleStripClickEvents() {
     $('#strip td').click(function() {
-        $('#strip .selected').removeClass('selected');
+        const selectedColor = $('#strip .selected');
+        selectedColor.removeClass('selected');
         $(this).addClass('selected');
+        const color = $('#strip .selected').attr('class').split(' ')[0];
+
+        const tds = $('#main td').filter(function() {
+            const className = $($(this)).attr('class');
+            return className ? true : false;
+        });
+
+        $(tds).each(function () {
+            const className = $($(this)).attr('class');
+    
+            if (colors.includes(className)) {
+                $(this).removeClass(className);
+            }
+            $(this).addClass(color);
+        });
     });
 }
 
 function applyColorToSelectedElements(elements) {
+    const selectedColor = $('#strip .selected').attr('class').split(' ')[0];
+
     elements.forEach(element => {
         const className = $(element).attr('class');
 
@@ -31,7 +49,7 @@ function applyColorToSelectedElements(elements) {
             $(element).removeClass(className);
         }
         else {
-            $(element).addClass('orange');
+            $(element).addClass(selectedColor);
         }
     });
 }
@@ -40,10 +58,9 @@ function handleMainClickEvents() {
     $('#main td').click(function() {
         const id = $(this).attr('id');
         const index = parseInt(id.substr(id.indexOf('-') + 1));
-        const orthogonalIndices = getOrthogonalIndices(index);
-        const elements = orthogonalIndices.map((index) => $(`#main-${index}`));
-        elements.push($(this));
-        applyColorToSelectedElements(elements);
+        const orthogonalIndices = getOrthogonalIndices(index).map((index) => $(`#main-${index}`));
+        orthogonalIndices.push($(this));
+        applyColorToSelectedElements(orthogonalIndices);
     });
 }
 
@@ -58,7 +75,6 @@ function createTable(rows, cols, id)  {
             const cell = document.createElement("td");
             const cellId = `${id}-${count++}`;
             cell.setAttribute("id", cellId);
-            cell.textContent = cellId;
             row.appendChild(cell);
         }
         table.appendChild(row);
