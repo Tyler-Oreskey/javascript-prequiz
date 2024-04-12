@@ -1,11 +1,16 @@
 const colors = ['black', 'red', 'blue', 'yellow', 'green', 'purple', 'orange', 'cyan', 'magenta', 'gray'];
 
 $(document).ready(function () {
-    createTable(1, 10, "strip");
+    createTable(1, colors.length, "strip");
     createTable(20, 20, "main");
 
+    // ind color to table cell
+    $('[id^="strip-"]').each(function(index) {
+        $(this).addClass(colors[index]);
+    });
+
     // defaults
-    $("#strip td:first").attr('class', 'selected');
+    $("#strip td:first").addClass('selected');
 
     handleStripClickEvents();
     handleMainClickEvents();
